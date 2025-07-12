@@ -1,7 +1,6 @@
 import pool from '../../db/config.js'
 import bcrypt from 'bcryptjs'
 
-// REGISTER ==============
 export const createUserModel = async (email, password, rol, lenguage) => {
   const hashedPassword = bcrypt.hashSync(password)
   console.log( hashedPassword )
@@ -13,7 +12,6 @@ export const createUserModel = async (email, password, rol, lenguage) => {
   return response.rows[0]
 }
 
-// LOGIN ==============
 export const getUserModel = async (email) => {
   const SQLquery = {
     text: 'SELECT * FROM usuarios WHERE email = $1',
